@@ -42,7 +42,59 @@ scaffold = CogniScaffold()
 ...
 ```
 
-See `main.py` for a detailed usage example.
+See `main.py` for a detailed usage example as a library.
+
+## Running as a Server
+
+CogniScaffold can also be run as a streaming HTTP server using Flask.
+
+### 1. Setup
+
+First, create and activate a virtual environment, then install the dependencies:
+
+```bash
+# From the project root directory
+python3 -m venv .venv
+# Install dependencies into the virtual environment
+./.venv/bin/pip install -r requirements.txt
+```
+
+### 2. Execution
+
+Run the server using the Flask CLI. Make sure you are in the parent directory of `cogni_scaffold`.
+
+```bash
+./.venv/bin/flask --app cogni_scaffold.server:app run
+```
+
+The server will start, typically on `http://127.0.0.1:5000`.
+
+## API Endpoints
+
+All endpoints provide responses in a streaming `text/event-stream` format.
+
+### `GET /search?q=<keyword>`
+
+Searches for frameworks. Each matching framework is sent as a separate JSON object in the stream.
+
+**Example:** `curl http://127.0.0.1:5000/search?q=competition`
+
+### `GET /template/<framework_name>`
+
+Retrieves the Markdown template for a specific framework.
+
+**Example:** `curl http://127.0.0.1:5000/template/swot`
+
+### `POST /suggest`
+
+Suggests frameworks based on a JSON payload. Each suggestion is sent as a separate event in the stream.
+
+**Example:**
+```bash
+curl -X POST -H "Content-Type: application/json" \
+-d '{"problem": "We need to analyze our market position."}' \
+http://127.0.0.1:5000/suggest
+```
 
 ## Future Development
 
