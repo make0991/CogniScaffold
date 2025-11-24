@@ -1,7 +1,7 @@
 # main.py
 # This is an example script demonstrating how to use the CogniScaffold tool.
 
-from . import CogniScaffold
+from .core import CogniScaffold
 
 def main():
     """
