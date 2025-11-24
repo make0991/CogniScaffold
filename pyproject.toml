@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cogni-scaffold = "cogni_scaffold:main"
+cogni-scaffold = "cogni_scaffold.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/cogni-scaffold/cogni-scaffold"
