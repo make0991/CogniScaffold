@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cogni-scaffold"
+version = "0.1.0"
+description = "A cognitive scaffolding tool for structured thinking."
+authors = [
+    { name = "CogniScaffold Team" }
+]
+readme = "README.md"
+license = "Apache-2.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "fastmcp",
+]
+
+[project.scripts]
+cogni-scaffold = "cogni_scaffold:main"
+
+[project.urls]
+Homepage = "https://github.com/cogni-scaffold/cogni-scaffold"
+"Bug Tracker" = "https://github.com/cogni-scaffold/cogni-scaffold/issues"

@@ -28,25 +28,40 @@ The core of `CogniScaffold` is a manually curated Python dictionary of powerful 
 -   First Principles Thinking
 -   And more...
 
-## Getting Started
+## Installation and Usage
 
-To use the tool, import the `CogniScaffold` class and create an instance:
+`CogniScaffold` is packaged as a standard Python library and can be installed using `pip`. It is recommended to install it within a virtual environment.
 
-```python
-from cogni_scaffold import CogniScaffold
+### 1. Installation
 
-# Create an instance of the tool
-scaffold = CogniScaffold()
+From the project root directory, run the following command to install the package in editable mode:
 
-# Now you can use its methods
-...
+```bash
+pip install -e .
 ```
 
-See `main.py` for a detailed usage example.
+This will install `cogni_scaffold` and its dependencies, including the `FastMCP` server.
+
+### 2. Running the MCP Server
+
+Once installed, you can run the `CogniScaffold` MCP server using the command-line entry point:
+
+```bash
+cogni-scaffold
+```
+
+Alternatively, you can run it as a module:
+
+```bash
+python -m cogni_scaffold
+```
+
+The server will start and be available for MCP clients to connect to.
 
 ## Future Development
 
 This prototype can be expanded by:
 -   Continuously growing the framework knowledge base.
 -   Improving the `suggest()` method with more sophisticated NLP techniques.
--   Adding a command-line interface (CLI) for quick access.
+-   Adding more tools and resources to the MCP server.
+
