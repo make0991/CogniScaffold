@@ -1,0 +1,4 @@
+# requirements.txt
+# Dependencies for running the CogniScaffold server.
+
+Flask>=2.0
